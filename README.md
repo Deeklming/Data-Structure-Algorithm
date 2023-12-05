@@ -1,5 +1,4 @@
-# dkmlibes
-
+# Study-GPT
 ```txt
-These are Deeklming's comprehensive libraries.
+GPT Study repo
 ```

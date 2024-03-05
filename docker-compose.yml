@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  gpt:
+    # image: debian:bookworm
+    image: ollama/ollama
+    # image: nvidia/cuda:12.3.2-runtime-ubuntu22.04
+    container_name: ollama
+    # command: nvidia-smi
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "4096M"
+        # reservations:
+        #   devices:
+        #     - driver: nvidia
+        #       capabilities: [gpu]
+    networks:
+      - mynet
+    ports:
+      - 10080:80
+      - 10443:443
+      - 11434:11434
+    volumes:
+      # - ./ai:/ai
+      - ./ai:/root/.ollama
+    labels:
+      - "hostname=gpt"
+    restart: on-failure
+    stdin_open: true
+    tty: true
+
+networks:
+  mynet:
+    external: true

@@ -22,4 +22,6 @@ ollama run gemma
 
 ---
 
-# 
+# Notes
+1. [LLM learning materials](https://www.youtube.com/watch?v=2eWuYf-aZE4)
+LLM 학습 자료 -> 백터, 추천시스템
